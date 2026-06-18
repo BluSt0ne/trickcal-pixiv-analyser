@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local datasets and models
+/dataset/
+/검수필요/
+*.pth
+*.pt
+__pycache__/
+ml/checkpoints/
+ml/download_history.json
+/node_modules/
+
