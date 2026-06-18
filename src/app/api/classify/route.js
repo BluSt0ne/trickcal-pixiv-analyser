@@ -25,8 +25,16 @@ export async function POST(request) {
         return NextResponse.json({ error: '유효한 픽시브 URL이 아닙니다. (예: https://www.pixiv.net/artworks/12345678)' }, { status: 400 });
       }
 
+      const fetchHeaders = {
+        'Referer': 'https://www.pixiv.net/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      };
+      if (process.env.PIXIV_COOKIE) {
+        fetchHeaders['Cookie'] = process.env.PIXIV_COOKIE;
+      }
+
       const metaRes = await fetch(`https://www.pixiv.net/ajax/illust/${artworkId}`, {
-        headers: { 'Referer': 'https://www.pixiv.net/' },
+        headers: fetchHeaders,
       });
       if (!metaRes.ok) {
         return NextResponse.json({ error: '픽시브에서 작품 정보를 가져오지 못했습니다.' }, { status: 502 });

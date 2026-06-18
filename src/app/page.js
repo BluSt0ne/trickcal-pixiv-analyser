@@ -82,7 +82,7 @@ export default function Home() {
             className={`${styles.tabButton} ${viewMode === 'classify' ? styles.activeTab : ''}`}
             onClick={() => setViewMode('classify')}
           >
-            🤖 AI 분류
+            AI 분류
           </button>
         </div>
       </header>

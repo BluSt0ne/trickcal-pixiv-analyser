@@ -52,7 +52,13 @@ async function main() {
   }
 
   const jNamesMap = JSON.parse(fs.readFileSync(jNamesMapPath, 'utf8'));
-  const charNames = Object.keys(jNamesMap);
+  let charNames = Object.keys(jNamesMap);
+
+  const filterNames = process.argv.slice(3);
+  if (filterNames.length > 0) {
+    charNames = charNames.filter(name => filterNames.includes(name));
+    console.log(`Filtering search to specific characters: ${charNames.join(', ')}`);
+  }
   
   const datasetDir = path.join(__dirname, '..', 'dataset');
   const needVerifyDir = path.join(__dirname, '..', '검수필요');
@@ -142,13 +148,13 @@ async function main() {
     }
 
     const currentTotal = verifiedCount + unverifiedCount;
-    if (currentTotal >= 100) {
-      console.log(`  -> Already have ${currentTotal} images total (Verified: ${verifiedCount}, Unverified: ${unverifiedCount}, which is >= 100). Skipping.`);
+    if (currentTotal >= limit) {
+      console.log(`  -> Already have ${currentTotal} images total (Verified: ${verifiedCount}, Unverified: ${unverifiedCount}, which is >= ${limit}). Skipping.`);
       continue;
     }
 
-    const needed = 115 - currentTotal;
-    console.log(`  -> Total: ${currentTotal} (Verified: ${verifiedCount}, Unverified: ${unverifiedCount}). Target raised to 115. Downloading ${needed} new images into '검수필요/${name}'...`);
+    const needed = (limit + 15) - currentTotal;
+    console.log(`  -> Total: ${currentTotal} (Verified: ${verifiedCount}, Unverified: ${unverifiedCount}). Target raised to ${limit + 15}. Downloading ${needed} new images into '검수필요/${name}'...`);
 
     if (!fs.existsSync(charDirUnverified)) {
       fs.mkdirSync(charDirUnverified, { recursive: true });
@@ -165,10 +171,11 @@ async function main() {
 
       let page = 1;
       let hasMore = true;
+      const prefix = term === name ? "트릭컬" : "トリッカル";
 
       while (hasMore && downloadedCount < needed) {
-        console.log(`  - Searching with tag: "트릭컬 ${term}" (Page ${page})...`);
-        const query = encodeURIComponent(`트릭컬 ${term}`);
+        console.log(`  - Searching with tag: "${prefix} ${term}" (Page ${page})...`);
+        const query = encodeURIComponent(`${prefix} ${term}`);
         const url = `https://www.pixiv.net/ajax/search/artworks/${query}?word=${query}&s_mode=s_tag_full&p=${page}`;
 
         try {
@@ -244,7 +251,22 @@ async function main() {
     }
 
     console.log(`  -> Finished "${name}". Total downloaded this session: ${downloadedCount}`);
+    if (fs.existsSync(charDirUnverified)) {
+      const files = fs.readdirSync(charDirUnverified);
+      if (files.length === 0) {
+        fs.rmdirSync(charDirUnverified);
+      }
+    }
     await sleep(2000); // 2s delay between characters
+  }
+
+  // Clean up parent directory if empty
+  try {
+    if (fs.existsSync(needVerifyDir) && fs.readdirSync(needVerifyDir).length === 0) {
+      fs.rmdirSync(needVerifyDir);
+    }
+  } catch (e) {
+    // Ignore error
   }
 
   console.log(`\n===================================================`);

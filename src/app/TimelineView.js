@@ -146,10 +146,10 @@ export default function TimelineView({ currentRankings }) {
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
           <button className={styles.tabButton} onClick={() => setIsPlaying(!isPlaying)}
             style={{ padding: '6px 14px', background: isPlaying ? '#ef4444' : '#22c55e', color: 'white', fontSize: '0.85rem', fontWeight: 700 }}>
-            {isPlaying ? '⏸ 일시정지' : '▶ 재생'}
+            {isPlaying ? '일시정지' : '재생'}
           </button>
           <button className={styles.tabButton} onClick={() => { setIsPlaying(false); setCurrentIndex(0); }}
-            style={{ padding: '6px 12px', fontSize: '0.85rem' }}>↺ 처음부터</button>
+            style={{ padding: '6px 12px', fontSize: '0.85rem' }}>처음부터</button>
           <div style={{ display: 'flex', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
             <button onClick={() => handleModeChange('cumulative')}
               style={{ padding: '5px 12px', fontSize: '0.8rem', fontWeight: 600, border: 'none', cursor: 'pointer',

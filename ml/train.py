@@ -55,15 +55,20 @@ def train(args):
         train_ds, val_ds = random_split(full_ds, [train_size, val_size])
         val_ds.dataset.transform = VAL_TRANSFORMS
 
-    train_loader = DataLoader(train_ds, batch_size=args.batch, shuffle=True, num_workers=2, pin_memory=True)
-    val_loader = DataLoader(val_ds, batch_size=args.batch, shuffle=False, num_workers=2)
+    train_loader = DataLoader(train_ds, batch_size=args.batch, shuffle=True, num_workers=0, pin_memory=True)
+    val_loader = DataLoader(val_ds, batch_size=args.batch, shuffle=False, num_workers=0)
 
-    # Model
-    model = build_model(num_classes=len(classes))
-    if args.ckpt and os.path.exists(args.ckpt):
-        state = torch.load(args.ckpt, map_location='cpu')
+    # Model loading (check if we can load trickcal_model.pth or custom checkpoint offline)
+    ckpt_to_load = args.ckpt if args.ckpt else ('trickcal_model.pth' if os.path.exists('trickcal_model.pth') else '')
+    pretrained = not bool(ckpt_to_load)
+    
+    print(f"Building model (pretrained={pretrained})...", flush=True)
+    model = build_model(num_classes=len(classes), pretrained=pretrained)
+    
+    if ckpt_to_load and os.path.exists(ckpt_to_load):
+        state = torch.load(ckpt_to_load, map_location='cpu')
         model.load_state_dict(state['model'])
-        print(f'Loaded checkpoint: {args.ckpt}')
+        print(f'Loaded checkpoint: {ckpt_to_load}', flush=True)
 
     if args.stage == 2:
         unfreeze_backbone(model, layers_from_end=2)
@@ -75,15 +80,18 @@ def train(args):
         lr=args.lr, weight_decay=1e-4
     )
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
-    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
+    criterion = nn.BCEWithLogitsLoss()
 
     os.makedirs(args.out, exist_ok=True)
-    best_acc = 0.0
+    best_f1 = 0.0
 
     for epoch in range(1, args.epochs + 1):
         # --- Train ---
         model.train()
-        total_loss, correct, total = 0.0, 0, 0
+        total_loss, total = 0.0, 0
+        train_correct_elements, train_total_elements = 0, 0
+        train_tp, train_fp, train_fn = 0, 0, 0
+        
         for imgs, labels in train_loader:
             imgs, labels = imgs.to(device), labels.to(device)
             optimizer.zero_grad()
@@ -91,42 +99,75 @@ def train(args):
             loss = criterion(logits, labels)
             loss.backward()
             optimizer.step()
+            
             total_loss += loss.item() * len(imgs)
-            correct += (logits.argmax(1) == labels).sum().item()
             total += len(imgs)
-        train_acc = correct / total
+            
+            preds = (torch.sigmoid(logits) > 0.5).float()
+            train_correct_elements += (preds == labels).sum().item()
+            train_total_elements += labels.numel()
+            
+            train_tp += ((preds == 1.0) & (labels == 1.0)).sum().item()
+            train_fp += ((preds == 1.0) & (labels == 0.0)).sum().item()
+            train_fn += ((preds == 0.0) & (labels == 1.0)).sum().item()
+            
+        train_precision = train_tp / (train_tp + train_fp + 1e-8)
+        train_recall = train_tp / (train_tp + train_fn + 1e-8)
+        train_f1 = 2 * train_precision * train_recall / (train_precision + train_recall + 1e-8)
+        train_acc = train_correct_elements / train_total_elements
         scheduler.step()
 
         # --- Validate ---
         model.eval()
-        val_correct, val_total = 0, 0
+        val_loss, val_total_samples = 0.0, 0
+        val_correct_elements, val_total_elements = 0, 0
+        val_tp, val_fp, val_fn = 0, 0, 0
+        
         with torch.no_grad():
             for imgs, labels in val_loader:
                 imgs, labels = imgs.to(device), labels.to(device)
-                preds = model(imgs).argmax(1)
-                val_correct += (preds == labels).sum().item()
-                val_total += len(imgs)
-        val_acc = val_correct / val_total if val_total else 0
+                logits = model(imgs)
+                loss = criterion(logits, labels)
+                
+                val_loss += loss.item() * len(imgs)
+                val_total_samples += len(imgs)
+                
+                preds = (torch.sigmoid(logits) > 0.5).float()
+                val_correct_elements += (preds == labels).sum().item()
+                val_total_elements += labels.numel()
+                
+                val_tp += ((preds == 1.0) & (labels == 1.0)).sum().item()
+                val_fp += ((preds == 1.0) & (labels == 0.0)).sum().item()
+                val_fn += ((preds == 0.0) & (labels == 1.0)).sum().item()
+                
+        val_precision = val_tp / (val_tp + val_fp + 1e-8)
+        val_recall = val_tp / (val_tp + val_fn + 1e-8)
+        val_f1 = 2 * val_precision * val_recall / (val_precision + val_recall + 1e-8)
+        val_acc = val_correct_elements / val_total_elements
+        val_loss_avg = val_loss / val_total_samples if val_total_samples else 0.0
 
         print(f'Epoch {epoch:3d}/{args.epochs}  '
               f'loss={total_loss/total:.4f}  '
-              f'train_acc={train_acc:.3f}  val_acc={val_acc:.3f}')
+              f'train_f1={train_f1:.3f}  '
+              f'val_loss={val_loss_avg:.4f}  '
+              f'val_f1={val_f1:.3f}  val_acc={val_acc:.3f}')
 
         ckpt = {
             'epoch': epoch,
             'model': model.state_dict(),
             'classes': classes,
+            'val_f1': val_f1,
             'val_acc': val_acc,
         }
         torch.save(ckpt, os.path.join(args.out, f'stage{args.stage}_epoch{epoch:03d}.pt'))
 
-        if val_acc > best_acc:
-            best_acc = val_acc
+        if val_f1 > best_f1:
+            best_f1 = val_f1
             torch.save(ckpt, os.path.join(args.out, f'best_stage{args.stage}.pt'))
             torch.save(ckpt, 'trickcal_model.pth')
-            print(f'  -> best model saved to trickcal_model.pth (val_acc={val_acc:.3f})')
+            print(f'  -> best model saved to trickcal_model.pth (val_f1={val_f1:.3f})')
 
-    print(f'\nTraining complete. Best val_acc={best_acc:.3f}')
+    print(f'\nTraining complete. Best val_f1={best_f1:.3f}')
 
 
 if __name__ == '__main__':

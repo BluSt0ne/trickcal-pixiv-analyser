@@ -1,0 +1,912 @@
+{
+  "dataset/multilabel/146154380.jpg": [
+    "레이지",
+    "페스타"
+  ],
+  "dataset/multilabel/146145451.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146144845.jpg": [
+    "버터",
+    "스피키"
+  ],
+  "dataset/multilabel/146144160.jpg": [
+    "셀리네",
+    "우이"
+  ],
+  "dataset/multilabel/146142174.jpg": [
+    "우로스",
+    "티그"
+  ],
+  "dataset/multilabel/146139705.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146127583.jpg": [
+    "디아나",
+    "버터"
+  ],
+  "dataset/multilabel/146124861.jpg": [
+    "나이아",
+    "셰이디",
+    "시스트",
+    "요미"
+  ],
+  "dataset/multilabel/146123918.jpg": [
+    "다야",
+    "아라그니아"
+  ],
+  "dataset/multilabel/146123869.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/146123361.jpg": [
+    "아라그니아",
+    "캐시"
+  ],
+  "dataset/multilabel/146121919.jpg": [
+    "니펠",
+    "아이시아"
+  ],
+  "dataset/multilabel/146118748.jpg": [
+    "비비",
+    "오팔"
+  ],
+  "dataset/multilabel/146117300.jpg": [
+    "레테",
+    "헤일리"
+  ],
+  "dataset/multilabel/146111749.jpg": [
+    "니펠",
+    "아이시아"
+  ],
+  "dataset/multilabel/146108169.jpg": [
+    "가비아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146104467.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146103469.jpg": [
+    "루포",
+    "리스티"
+  ],
+  "dataset/multilabel/146102095.jpg": [
+    "비비",
+    "스피키"
+  ],
+  "dataset/multilabel/146096189.jpg": [
+    "버터",
+    "에르핀",
+    "영춘",
+    "우이"
+  ],
+  "dataset/multilabel/146092083.jpg": [
+    "네르",
+    "에르핀",
+    "엘레나",
+    "폴랑"
+  ],
+  "dataset/multilabel/146086892.jpg": [
+    "리뉴아",
+    "림",
+    "뮤트"
+  ],
+  "dataset/multilabel/146082991.jpg": [
+    "림",
+    "셰이디"
+  ],
+  "dataset/multilabel/146082914.jpg": [
+    "리뉴아",
+    "마요"
+  ],
+  "dataset/multilabel/146082533.jpg": [
+    "니펠",
+    "비비"
+  ],
+  "dataset/multilabel/146082093.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146080547.jpg": [
+    "니펠",
+    "리뉴아"
+  ],
+  "dataset/multilabel/146077981.jpg": [
+    "마요",
+    "오르",
+    "키디언",
+    "티그",
+    "하이디"
+  ],
+  "dataset/multilabel/146077657.jpg": [
+    "멜루나",
+    "아이시아"
+  ],
+  "dataset/multilabel/146077613.jpg": [
+    "리뉴아",
+    "리스티"
+  ],
+  "dataset/multilabel/146077504.jpg": [
+    "리뉴아",
+    "에르핀"
+  ],
+  "dataset/multilabel/146077379.jpg": [
+    "리츠",
+    "비비"
+  ],
+  "dataset/multilabel/146077353.jpg": [
+    "라이카",
+    "리뉴아",
+    "슈로",
+    "에스피",
+    "요미",
+    "죠안"
+  ],
+  "dataset/multilabel/146073778.jpg": [
+    "디아나",
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/146070747.jpg": [
+    "교주",
+    "네르",
+    "루드",
+    "마요",
+    "스노키",
+    "에르핀"
+  ],
+  "dataset/multilabel/146066506.jpg": [
+    "리온",
+    "시저"
+  ],
+  "dataset/multilabel/146063623.jpg": [
+    "슈팡",
+    "페스타"
+  ],
+  "dataset/multilabel/146054261.jpg": [
+    "림",
+    "셰이디"
+  ],
+  "dataset/multilabel/146054136.jpg": [
+    "슈로",
+    "우로스"
+  ],
+  "dataset/multilabel/146052439.jpg": [
+    "리츠",
+    "빅우드"
+  ],
+  "dataset/multilabel/146049874.jpg": [
+    "나이아",
+    "요미"
+  ],
+  "dataset/multilabel/146046631.jpg": [
+    "로네",
+    "에슈르"
+  ],
+  "dataset/multilabel/146043950.jpg": [
+    "뮤트",
+    "아르코"
+  ],
+  "dataset/multilabel/146043398.jpg": [
+    "모모",
+    "버터"
+  ],
+  "dataset/multilabel/146032022.jpg": [
+    "네르",
+    "디아나",
+    "루포",
+    "뮤트",
+    "베니",
+    "벨벳",
+    "엘레나",
+    "이드",
+    "티그"
+  ],
+  "dataset/multilabel/146029884.jpg": [
+    "림",
+    "셰이디"
+  ],
+  "dataset/multilabel/146029298.jpg": [
+    "라이카",
+    "슈로",
+    "아일라",
+    "엘레나"
+  ],
+  "dataset/multilabel/146027892.jpg": [
+    "나이아",
+    "요미"
+  ],
+  "dataset/multilabel/146024128.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/146014370.jpg": [
+    "아멜리아",
+    "힐데"
+  ],
+  "dataset/multilabel/146011942.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/146011928.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/146011412.jpg": [
+    "리스티",
+    "비비"
+  ],
+  "dataset/multilabel/146010764.jpg": [
+    "리코타",
+    "스피키"
+  ],
+  "dataset/multilabel/146009445.jpg": [
+    "칸나",
+    "캬롯",
+    "클로에"
+  ],
+  "dataset/multilabel/146008821.jpg": [
+    "나이아",
+    "리스티"
+  ],
+  "dataset/multilabel/146005165.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145991533.jpg": [
+    "라이카",
+    "리뉴아",
+    "림",
+    "셰이디"
+  ],
+  "dataset/multilabel/145987936.jpg": [
+    "겨우살이",
+    "니펠"
+  ],
+  "dataset/multilabel/145986130.jpg": [
+    "리뉴아",
+    "비비"
+  ],
+  "dataset/multilabel/145984108.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/145983864.jpg": [
+    "가비아",
+    "키샤"
+  ],
+  "dataset/multilabel/145979357.jpg": [
+    "버터",
+    "코미",
+    "티그"
+  ],
+  "dataset/multilabel/145977897.jpg": [
+    "미로",
+    "아사나"
+  ],
+  "dataset/multilabel/145974344.jpg": [
+    "에피카",
+    "티그"
+  ],
+  "dataset/multilabel/145970285.jpg": [
+    "루포",
+    "리스티"
+  ],
+  "dataset/multilabel/145969419.jpg": [
+    "교주",
+    "네르",
+    "에르핀",
+    "죠안"
+  ],
+  "dataset/multilabel/145969313.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145966912.jpg": [
+    "디아나",
+    "셀리네"
+  ],
+  "dataset/multilabel/145963800.jpg": [
+    "리온",
+    "티그"
+  ],
+  "dataset/multilabel/145963595.jpg": [
+    "리뉴아",
+    "큐이"
+  ],
+  "dataset/multilabel/145962872.jpg": [
+    "리뉴아",
+    "리츠"
+  ],
+  "dataset/multilabel/145961744.jpg": [
+    "니펠",
+    "리스티"
+  ],
+  "dataset/multilabel/145959168.jpg": [
+    "니펠",
+    "아이시아"
+  ],
+  "dataset/multilabel/145956396.jpg": [
+    "아야",
+    "클로에"
+  ],
+  "dataset/multilabel/145953328.jpg": [
+    "베루",
+    "벨벳",
+    "파트라",
+    "피코라",
+    "헤일리"
+  ],
+  "dataset/multilabel/145946569.jpg": [
+    "교주",
+    "네르"
+  ],
+  "dataset/multilabel/145945960.jpg": [
+    "셰럼",
+    "잉클"
+  ],
+  "dataset/multilabel/145943526.jpg": [
+    "리스티",
+    "셀리네"
+  ],
+  "dataset/multilabel/145936148.jpg": [
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/145932388.jpg": [
+    "마요",
+    "바롱",
+    "버터",
+    "오팔"
+  ],
+  "dataset/multilabel/145932269.jpg": [
+    "죠안",
+    "키샤"
+  ],
+  "dataset/multilabel/145931561.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/145925275.jpg": [
+    "림",
+    "셰이디",
+    "제이드"
+  ],
+  "dataset/multilabel/145924761.jpg": [
+    "죠안",
+    "키샤"
+  ],
+  "dataset/multilabel/145922829.jpg": [
+    "칸나",
+    "캬롯"
+  ],
+  "dataset/multilabel/145922468.jpg": [
+    "교주",
+    "캐시"
+  ],
+  "dataset/multilabel/145919373.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145919227.jpg": [
+    "버터",
+    "쵸피"
+  ],
+  "dataset/multilabel/145915678.jpg": [
+    "버터",
+    "티그"
+  ],
+  "dataset/multilabel/145912895.jpg": [
+    "네르",
+    "에르핀",
+    "엘레나"
+  ],
+  "dataset/multilabel/145912367.jpg": [
+    "칸나",
+    "캬롯"
+  ],
+  "dataset/multilabel/145911094.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145907730.jpg": [
+    "리온",
+    "티그"
+  ],
+  "dataset/multilabel/145907474.jpg": [
+    "니펠",
+    "디아나"
+  ],
+  "dataset/multilabel/145900322.jpg": [
+    "라이카",
+    "리스티",
+    "에피카",
+    "페스타"
+  ],
+  "dataset/multilabel/145894429.jpg": [
+    "레테",
+    "헤일리"
+  ],
+  "dataset/multilabel/145891615.jpg": [
+    "슈로",
+    "우로스"
+  ],
+  "dataset/multilabel/145886306.jpg": [
+    "시스트",
+    "엘레나",
+    "이드",
+    "제이드"
+  ],
+  "dataset/multilabel/145878459.jpg": [
+    "레이지",
+    "림"
+  ],
+  "dataset/multilabel/145871932.jpg": [
+    "리뉴아",
+    "비비"
+  ],
+  "dataset/multilabel/145871198.jpg": [
+    "델리아",
+    "버터"
+  ],
+  "dataset/multilabel/145859481.jpg": [
+    "디아나",
+    "티그"
+  ],
+  "dataset/multilabel/145856664.jpg": [
+    "네르",
+    "엘레나"
+  ],
+  "dataset/multilabel/145853306.jpg": [
+    "라이카",
+    "리뉴아",
+    "앨리스"
+  ],
+  "dataset/multilabel/145853093.jpg": [
+    "그윈",
+    "델리아",
+    "리온"
+  ],
+  "dataset/multilabel/145851985.jpg": [
+    "시저",
+    "아이시아"
+  ],
+  "dataset/multilabel/145851354.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/145851089.jpg": [
+    "림",
+    "셰이디"
+  ],
+  "dataset/multilabel/145850530.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145848255.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/145846369.jpg": [
+    "셰이디",
+    "에르핀"
+  ],
+  "dataset/multilabel/145846291.jpg": [
+    "셰럼",
+    "잉클"
+  ],
+  "dataset/multilabel/145843009.jpg": [
+    "비비",
+    "아야"
+  ],
+  "dataset/multilabel/145842832.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145840749.jpg": [
+    "디아나",
+    "란"
+  ],
+  "dataset/multilabel/145839506.jpg": [
+    "리스티",
+    "아야",
+    "아이시아"
+  ],
+  "dataset/multilabel/145838180.jpg": [
+    "리스티",
+    "에르핀"
+  ],
+  "dataset/multilabel/145831642.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/145825245.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145823585.jpg": [
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/145821543.jpg": [
+    "림",
+    "마리",
+    "제이드"
+  ],
+  "dataset/multilabel/145820776.jpg": [
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/145819268.jpg": [
+    "네르",
+    "엘레나"
+  ],
+  "dataset/multilabel/145817251.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145815531.jpg": [
+    "란",
+    "버터"
+  ],
+  "dataset/multilabel/145815236.jpg": [
+    "리온",
+    "이드"
+  ],
+  "dataset/multilabel/145808345.jpg": [
+    "네티",
+    "아네트"
+  ],
+  "dataset/multilabel/145805243.jpg": [
+    "레테",
+    "뮤트",
+    "아이시아",
+    "이드"
+  ],
+  "dataset/multilabel/145804868.jpg": [
+    "나이아",
+    "네르"
+  ],
+  "dataset/multilabel/145798479.jpg": [
+    "니펠",
+    "아이시아"
+  ],
+  "dataset/multilabel/145798132.jpg": [
+    "에르핀",
+    "폴랑"
+  ],
+  "dataset/multilabel/145794637.jpg": [
+    "가비아",
+    "아일라"
+  ],
+  "dataset/multilabel/145789448.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145789305.jpg": [
+    "겨우살이",
+    "리온"
+  ],
+  "dataset/multilabel/145783000.jpg": [
+    "뮤트",
+    "시스트",
+    "이드"
+  ],
+  "dataset/multilabel/145778977.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/145775320.jpg": [
+    "오팔",
+    "제이드"
+  ],
+  "dataset/multilabel/145774923.jpg": [
+    "우로스",
+    "티그"
+  ],
+  "dataset/multilabel/145767432.jpg": [
+    "시온",
+    "아야",
+    "에피카",
+    "우이",
+    "이드",
+    "클로에"
+  ],
+  "dataset/multilabel/145765512.jpg": [
+    "버터",
+    "에르핀"
+  ],
+  "dataset/multilabel/145764559.jpg": [
+    "겨우살이",
+    "캐시",
+    "키샤"
+  ],
+  "dataset/multilabel/145763203.jpg": [
+    "가비아",
+    "로네",
+    "에스피",
+    "키샤"
+  ],
+  "dataset/multilabel/145760451.jpg": [
+    "슈로",
+    "시온"
+  ],
+  "dataset/multilabel/145757823.jpg": [
+    "교주",
+    "네르"
+  ],
+  "dataset/multilabel/145756692.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145755950.jpg": [
+    "디아나",
+    "슈로"
+  ],
+  "dataset/multilabel/145753102.jpg": [
+    "네르",
+    "리스티",
+    "마요",
+    "셰이디",
+    "이드",
+    "프리클"
+  ],
+  "dataset/multilabel/145752365.jpg": [
+    "스피키",
+    "아야",
+    "에피카",
+    "우이",
+    "이드",
+    "클로에"
+  ],
+  "dataset/multilabel/145751775.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145739818.jpg": [
+    "칸나",
+    "캬롯"
+  ],
+  "dataset/multilabel/145738301.jpg": [
+    "루포",
+    "베니",
+    "셰이디"
+  ],
+  "dataset/multilabel/145737688.jpg": [
+    "셰이디",
+    "엘레나"
+  ],
+  "dataset/multilabel/145736725.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/145735987.jpg": [
+    "가비아",
+    "아일라"
+  ],
+  "dataset/multilabel/145735883.jpg": [
+    "우로스",
+    "티그"
+  ],
+  "dataset/multilabel/145732884.jpg": [
+    "교주",
+    "디아나",
+    "티그"
+  ],
+  "dataset/multilabel/145729767.jpg": [
+    "시온",
+    "이드"
+  ],
+  "dataset/multilabel/145726661.jpg": [
+    "엘레나",
+    "칸나"
+  ],
+  "dataset/multilabel/145722548.jpg": [
+    "가비아",
+    "로네",
+    "에스피"
+  ],
+  "dataset/multilabel/145720625.jpg": [
+    "루포",
+    "벨라",
+    "우로스"
+  ],
+  "dataset/multilabel/145719737.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/145716722.jpg": [
+    "로네",
+    "키샤"
+  ],
+  "dataset/multilabel/145714617.jpg": [
+    "네르",
+    "에르핀"
+  ],
+  "dataset/multilabel/145714577.jpg": [
+    "리스티",
+    "앨리스"
+  ],
+  "dataset/multilabel/145703083.jpg": [
+    "리스티",
+    "아이시아"
+  ],
+  "dataset/multilabel/145696562.jpg": [
+    "시온",
+    "클로에"
+  ],
+  "dataset/multilabel/145696396.jpg": [
+    "네르",
+    "로네",
+    "아르코",
+    "카렌"
+  ],
+  "dataset/multilabel/145695585.jpg": [
+    "에슈르",
+    "이드",
+    "키샤"
+  ],
+  "dataset/multilabel/145692468.jpg": [
+    "에슈르",
+    "키샤"
+  ],
+  "dataset/multilabel/145692334.jpg": [
+    "뮤트",
+    "이드"
+  ],
+  "dataset/multilabel/145689983.jpg": [
+    "네르",
+    "스피키",
+    "파트라"
+  ],
+  "dataset/multilabel/145689597.jpg": [
+    "네르",
+    "우이"
+  ],
+  "dataset/multilabel/145688151.jpg": [
+    "마요",
+    "키디언"
+  ],
+  "dataset/multilabel/145687668.jpg": [
+    "마요",
+    "죠안"
+  ],
+  "dataset/multilabel/145684016.jpg": [
+    "우로스",
+    "티그"
+  ],
+  "dataset/multilabel/145683045.jpg": [
+    "리코타",
+    "오팔"
+  ],
+  "dataset/multilabel/145679599.jpg": [
+    "겨우살이",
+    "벨리타"
+  ],
+  "dataset/multilabel/145677040.jpg": [
+    "네르",
+    "스피키"
+  ],
+  "dataset/multilabel/145676871.jpg": [
+    "알레트",
+    "칸나"
+  ],
+  "dataset/multilabel/145673794.jpg": [
+    "교주",
+    "네르"
+  ],
+  "dataset/multilabel/145673778.jpg": [
+    "슈팡",
+    "아라그니아",
+    "키샤"
+  ],
+  "dataset/multilabel/145667407.jpg": [
+    "버터",
+    "코미",
+    "키샤"
+  ],
+  "dataset/multilabel/145666991.jpg": [
+    "카렌",
+    "캬롯"
+  ],
+  "dataset/multilabel/145666763.jpg": [
+    "버터",
+    "앨리스"
+  ],
+  "dataset/multilabel/145664458.jpg": [
+    "리뉴아",
+    "아멜리아"
+  ],
+  "dataset/multilabel/145655648.jpg": [
+    "네르",
+    "에르핀",
+    "캬롯"
+  ],
+  "dataset/multilabel/145648653.jpg": [
+    "림",
+    "셰이디",
+    "요미"
+  ],
+  "dataset/multilabel/145647400.jpg": [
+    "리스티",
+    "아이시아"
+  ],
+  "dataset/multilabel/145643873.jpg": [
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/145642249.jpg": [
+    "디아나",
+    "란",
+    "버터",
+    "코미"
+  ],
+  "dataset/multilabel/145639250.jpg": [
+    "나이아",
+    "리스티",
+    "프리클"
+  ],
+  "dataset/multilabel/145632450.jpg": [
+    "엘레나",
+    "이프리트"
+  ],
+  "dataset/multilabel/145632037.jpg": [
+    "리온",
+    "티그"
+  ],
+  "dataset/multilabel/145631454.jpg": [
+    "아멜리아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145630718.jpg": [
+    "네르",
+    "죠안"
+  ],
+  "dataset/multilabel/145630089.jpg": [
+    "우로스",
+    "잉클",
+    "티그"
+  ],
+  "dataset/multilabel/145626306.jpg": [
+    "로네",
+    "리온"
+  ],
+  "dataset/multilabel/145625232.jpg": [
+    "디아나",
+    "티그"
+  ],
+  "dataset/multilabel/145623116.jpg": [
+    "리스티",
+    "시저"
+  ],
+  "dataset/multilabel/145622275.jpg": [
+    "로네",
+    "리뉴아",
+    "엘레나"
+  ],
+  "dataset/multilabel/145616713.jpg": [
+    "리온",
+    "마요",
+    "코미",
+    "티그"
+  ],
+  "dataset/multilabel/145614249.jpg": [
+    "시온",
+    "이드"
+  ],
+  "dataset/multilabel/145614215.jpg": [
+    "교주",
+    "엘레나"
+  ],
+  "dataset/multilabel/145612285.jpg": [
+    "유미미",
+    "큐이"
+  ],
+  "dataset/multilabel/145611506.jpg": [
+    "마리",
+    "하이디"
+  ]
+}

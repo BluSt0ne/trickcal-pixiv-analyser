@@ -61,7 +61,7 @@ def get_model():
         )
 
     ckpt = torch.load(CHECKPOINT_PATH, map_location='cpu')
-    _classes = ckpt.get('classes') or load_classes(CLASSES_PATH)
+    _classes = load_classes(CLASSES_PATH)
     _model = build_model(num_classes=len(_classes), pretrained=False)
     _model.load_state_dict(ckpt['model'])
     _model.eval().to(DEVICE)
@@ -77,7 +77,7 @@ def _classify_pil(img: Image.Image) -> list[dict]:
     tensor = INFER_TRANSFORMS(img.convert('RGB')).unsqueeze(0).to(DEVICE)
     with torch.no_grad():
         logits = model(tensor)
-        probs = F.softmax(logits, dim=1)[0]
+        probs = torch.sigmoid(logits)[0]
 
     top_k = min(TOP_K, len(classes))
     top_probs, top_idx = probs.topk(top_k)

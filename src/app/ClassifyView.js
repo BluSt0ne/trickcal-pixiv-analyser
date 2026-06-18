@@ -51,6 +51,8 @@ export default function ClassifyView() {
     }
   }
 
+  const threshold = 0.20;
+  const detected = result?.predictions?.filter(p => p.probability >= threshold) || [];
   const top = result?.predictions?.[0];
   const topPct = top ? Math.round(top.probability * 100) : 0;
 
@@ -67,9 +69,9 @@ export default function ClassifyView() {
         color: '#94a3b8',
         lineHeight: 1.6,
       }}>
-        <strong style={{ color: '#a5b4fc' }}>AI 캐릭터 분류기</strong>
-        &nbsp;— ResNet50을 트릭컬 리바이브 캐릭터 이미지로 파인튜닝한 모델입니다.
-        픽시브 아트워크 URL 또는 이미지 직접 링크를 입력하면 어떤 캐릭터인지 확률과 함께 알려줍니다.
+        <strong style={{ color: '#a5b4fc' }}>AI 캐릭터 분류기 (다중 캐릭터 검출)</strong>
+        &nbsp;— ResNet50을 다중 캐릭터 검출(Multi-Label) 모델로 파인튜닝한 시스템입니다.
+        픽시브 아트워크 URL 또는 이미지 직접 링크를 입력하면 등장하는 모든 캐릭터들을 높은 순서대로 검출해 줍니다.
         <br />
         <span style={{ color: '#6366f1', fontSize: '0.78rem' }}>
           * 모델 학습 후 사용 가능합니다 (ml/train.py 실행 필요)
@@ -114,7 +116,7 @@ export default function ClassifyView() {
       {/* URL type hint */}
       {input && (
         <p style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '-1rem', marginBottom: '1rem' }}>
-          {isPixivUrl ? '✓ 픽시브 아트워크 URL' : isDirectImage ? '✓ 이미지 직접 URL' : '⚠ 픽시브 URL 또는 이미지 직접 URL을 입력해주세요'}
+          {isPixivUrl ? '[확인] 픽시브 아트워크 URL' : isDirectImage ? '[확인] 이미지 직접 URL' : '[경고] 픽시브 URL 또는 이미지 직접 URL을 입력해주세요'}
         </p>
       )}
 
@@ -155,25 +157,60 @@ export default function ClassifyView() {
             </div>
           )}
 
-          {/* Top result headline */}
+          {/* Headline result */}
           {top && (
             <div style={{
               textAlign: 'center',
               marginBottom: '1.5rem',
-              padding: '1rem',
+              padding: '1.2rem',
               background: 'rgba(99,102,241,0.08)',
               borderRadius: '12px',
               border: '1px solid rgba(99,102,241,0.2)',
             }}>
-              <div style={{ fontSize: '1rem', color: '#94a3b8', marginBottom: '4px' }}>
-                이 그림은
-              </div>
-              <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#a5b4fc' }}>
-                {top.character}
-              </div>
-              <div style={{ fontSize: '1.1rem', color: '#e2e8f0', marginTop: '4px' }}>
-                일 확률 <strong style={{ color: '#fbbf24' }}>{topPct}%</strong>
-              </div>
+              {detected.length === 0 ? (
+                <>
+                  <div style={{ fontSize: '1rem', color: '#94a3b8', marginBottom: '4px' }}>
+                    검출된 캐릭터가 없습니다.
+                  </div>
+                  <div style={{ fontSize: '1.1rem', color: '#e2e8f0' }}>
+                    가장 유사한 캐릭터: <strong style={{ color: '#a5b4fc' }}>{top.character}</strong> ({topPct}%)
+                  </div>
+                </>
+              ) : detected.length === 1 ? (
+                <>
+                  <div style={{ fontSize: '1.0rem', color: '#94a3b8', marginBottom: '4px' }}>
+                    검출된 캐릭터
+                  </div>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#a5b4fc' }}>
+                    {detected[0].character}
+                  </div>
+                  <div style={{ fontSize: '1.1rem', color: '#e2e8f0', marginTop: '4px' }}>
+                    확률 <strong style={{ color: '#fbbf24' }}>{Math.round(detected[0].probability * 100)}%</strong>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ fontSize: '1.0rem', color: '#94a3b8', marginBottom: '6px' }}>
+                    검출된 캐릭터들
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '8px' }}>
+                    {detected.map((d) => (
+                      <div key={d.character} style={{
+                        background: 'rgba(99, 102, 241, 0.15)',
+                        border: '1px solid rgba(99, 102, 241, 0.3)',
+                        borderRadius: '8px',
+                        padding: '0.4rem 0.8rem',
+                        display: 'flex',
+                        alignItems: 'baseline',
+                        gap: '6px'
+                      }}>
+                        <span style={{ fontSize: '1.2rem', fontWeight: 800, color: '#a5b4fc' }}>{d.character}</span>
+                        <span style={{ fontSize: '0.9rem', color: '#fbbf24', fontWeight: 700 }}>{Math.round(d.probability * 100)}%</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
 
